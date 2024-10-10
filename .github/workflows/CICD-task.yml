@@ -19,8 +19,19 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: |
-          ./mvnw clean install -U
+       # Change to the directory containing the mvnw file
+      - name: Navigate to hello-world/hello-world directory
+        run: cd hello-world/hello-world
 
+        # Grant execute permission for Maven wrapper
+      - name: Grant execute permission for Maven wrapper
+        run: chmod +x ./mvnw
+
+      - name: Build with Maven
+        run: ./mvnw clean install -U
+
+
+
+
+        
       
