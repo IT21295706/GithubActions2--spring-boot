@@ -19,8 +19,15 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build with Maven
-        run: |
-          ./mvnw clean package
+       # Change to the directory containing the mvnw file
+      - name: Navigate to hello-world/hello-world directory
+        run: cd hello-world/hello-world
 
+      - name: Build with Maven
+        run: ./mvnw clean install -U
+
+
+
+
+        
       
